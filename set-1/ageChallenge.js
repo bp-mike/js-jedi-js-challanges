@@ -13,3 +13,19 @@ function determineAgeCategory(){ // challenge 2
 }
 
 determineAgeCategory()
+
+
+
+
+///My Solution
+let age = prompt("Input your age: ");
+
+if (age >= 0 && age < 18) {
+  console.log("You are a minor");
+} else if (age >= 18 && age <= 36) {
+  console.log("You are a youth");
+} else if (age > 36 && age <= 180) {
+  console.log("You are an elder");
+} else {
+  console.log("You entered an invalid number for age");
+}
