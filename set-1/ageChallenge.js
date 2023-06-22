@@ -1,4 +1,4 @@
-function determineAgeCategory(){ // challenge 2
+//Pseudocode for challenge 2
     // prompt the user to enter their year of birth
     // read the input and store it in a variable called yearOfBirth
     // calculate the current year and store it in a variable called currentYear
@@ -10,15 +10,12 @@ function determineAgeCategory(){ // challenge 2
         // output "You are a youth." in the console
     // else:
         // output "You are an elder." in the console
-}
-
-determineAgeCategory()
 
 
-
-
-///My Solution
-let age = prompt("Input your age: ");
+//Solution
+let birth_year = prompt("Enter birth year: ");
+let current_year = new Date().getFullYear();
+let age = current_year - birth_year;
 
 if (age >= 0 && age < 18) {
   console.log("You are a minor");
@@ -27,5 +24,5 @@ if (age >= 0 && age < 18) {
 } else if (age > 36 && age <= 180) {
   console.log("You are an elder");
 } else {
-  console.log("You entered an invalid number for age");
+  console.log("You entered an invalid year of birth");
 }
