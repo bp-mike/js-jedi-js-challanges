@@ -1,21 +1,24 @@
-function longestCommonPrefix(strs) { // challenge 5
-    // if strs is empty:
-    //  return an empty string
+function longestCommonPrefix(strs) {
+  // challenge 5
+  // Sort the array to ensure the shortest string is at the beginning
+  strs.sort();
+  // Take the first and last string in the sorted array
+  const firstStr = strs[0];
+  const lastStr = strs[strs.length - 1];
+  let output = "";
 
-    // Start with the first string as the initial prefix
-    // prefix = strs[0]  
-
-    // Iterate through each string in the array
-    // for i = 1 to length of strs - 1
-        // while the current string does not start with the prefix
-            // Keep removing the last character from the prefix until it matches
-            // prefix = prefix - last character of prefix
-    
-        return prefix;
+  // for every common character in each string add it to the output
+  for (let i = 0; i < firstStr.length; i++) {
+    if (firstStr[i] == lastStr[i]) {
+      output += firstStr[i];
+    } else {
+      break;
     }
-  
-  // Example usage:
-  let strs = ["flower", "flow", "flight"];
-  let commonPrefix = longestCommonPrefix(strs);
-  console.log(commonPrefix);
-  
+  }
+  return output;
+}
+
+// Example usage:
+let strs = ["flower", "flow", "flight"];
+let commonPrefix = longestCommonPrefix(strs);
+console.log(commonPrefix);
