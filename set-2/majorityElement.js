@@ -1,27 +1,30 @@
-function majorityElement(nums) { // challenge 3
-        // Initialize count and majority variables
-        let count = 0
-        let majority = nums[0]
-    
-        // Iterate through each element in the array
-        // for each element in nums
-            // If count is 0, assign the current element as the majority candidate
-            // if count is 0
-                // assign element to majority
-    
-            // If the current element is equal to the majority candidate, increment the count
-            // if element is equal to majority
-                // increment count
-            // If the current element is different from the majority candidate, decrement the count
-            // else:
-                // decrement count
-    
-        // Return the majority candidate
-        return majority
+function majorityElement(nums) {// challenge 3
+  // Initialize count and majority variables
+  //  create  counts variable  to store  counts of each element.
+  console.log(nums);
+  console.log("array length = " + nums.length);
+  const counts = {};
+  // For each element, increment its count in the  counts object.
+  for (let num of nums) {
+    if (counts[num]) {
+      counts[num]++;
+      console.log({"new counts":counts});
+    } else {
+      counts[num] = 1;
+      console.log({ count: counts[num] });
+    }
   }
-  
-  // Example usage:
-  let nums = [2, 2, 1, 1, 1, 2, 2];
-  let result = majorityElement(nums);
-  console.log(result);
-  
+
+  // After counting the occurrences of each element,
+  // For each element in counts, we check if its count is greater than nums.length / 2. and return the number
+  for (let num in counts) {
+    if (counts[num] > nums.length / 2) {
+      return num; // Return the majority element
+    }
+  }
+}
+
+// Example usage:
+let nums = [2, 2, 1, 1, 1, 2, 2];
+let result = majorityElement(nums);
+console.log(result);
