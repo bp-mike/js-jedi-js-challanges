@@ -1,22 +1,19 @@
-function containsDuplicate(nums) { // challenge 2
-    // Create an empty set to store unique elements
-    let set = emptySet()
+function containsDuplicate(nums) {
+  // challenge 2
 
-    // Iterate through each element in the array
-    // for each element in nums
-        // If the element is already in the set, it is a duplicate
-        // if element is in set
-            // return true
-        
-        // else
-        // add element to set
+  // sort the array in ascending order
+  nums.sort();
 
-    // No duplicates found, return false
-    return false
+  // iterate over the sorted array to check neighbor items are equal
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === nums[i - 1]) return true;
   }
-  
-  // Example usage:
-  let nums = [1, 2, 3, 4, 5];
-  let result = containsDuplicate(nums);
-  console.log(result);
-  
+
+  // No duplicates found, return false
+  return false;
+}
+
+// Example usage:
+let nums = [1, 2, 3, 4, 5, 4];
+let result = containsDuplicate(nums);
+console.log(result);
